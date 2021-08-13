@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: monitoring
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: server-ping
+  namespace: monitoring
+spec:
+  containers:
+  - image: aknowles99/server-ping
+    imagePullPolicy: Always
+    name: server-ping
+  restartPolicy: Always
